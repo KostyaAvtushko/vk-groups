@@ -9,9 +9,9 @@ function Community (props: IGroup) {
 
     return (
       <RichCell
-        subhead={`${props.closed ? "закрытая группа" : "открытая группа"}`}
+        subhead={(props.closed !== undefined) && `${props.closed ? "закрытая группа" : "открытая группа"}`}
         before={<CommunityAvatar color={props?.avatar_color || ""}/>}
-        caption={`${props?.members_count || 0} ${getEndingForSubscribers(props.members_count)}`}
+        caption={!!props?.members_count && `${props.members_count} ${getEndingForSubscribers(props.members_count)}`}
         bottom={props.friends && <CommunityFriends friends={props.friends || []}/>}
         style={{ height: 'fit-content' }}
       >

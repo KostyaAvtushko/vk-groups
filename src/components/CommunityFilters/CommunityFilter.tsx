@@ -31,7 +31,7 @@ function CommunityFilters() {
       } catch (error) {
         dispatch([]);
       }
-      
+
       setLoading(false);
     }
 
